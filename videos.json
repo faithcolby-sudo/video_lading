@@ -16,5 +16,9 @@
    "prueba": {
     "thumbnail": "thumbs/prueba.jpeg",
     "redirect": "https://monetag.com"
+  },
+  "r1": {
+    "thumbnail": "thumbs/r1.jpeg",
+    "redirect": "https://monetag.com"
   }
 }
