@@ -12,5 +12,9 @@
   "video001": {
     "thumbnail": "thumbs/video001.jpg",
     "redirect": "https://ejemplo.com"
+  },
+   "prueba": {
+    "thumbnail": "thumbs/prueba.jpg",
+    "redirect": https://monetag.com/
   }
 }
