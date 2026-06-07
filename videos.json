@@ -1,6 +1,16 @@
 {
-  "abc123": {
+  "aceite": {
     "thumbnail": "thumbs/aceite.jpg",
     "redirect": "https://google.com"
+  },
+
+  "atun": {
+    "thumbnail": "thumbs/atun.jpg",
+    "redirect": "https://youtube.com"
+  },
+
+  "video001": {
+    "thumbnail": "thumbs/video001.jpg",
+    "redirect": "https://ejemplo.com"
   }
 }
