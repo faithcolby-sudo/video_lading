@@ -10,24 +10,38 @@
 
 body{
     margin:0;
-    background:#000;
+    background:#111;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
-.container{
-    position:relative;
-    max-width:450px;
+.player{
     width:95%;
+    max-width:500px;
+    background:#1c1c1c;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,.5);
+}
+
+.header{
+    background:#222;
+    color:white;
+    padding:12px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.video-box{
+    position:relative;
 }
 
 #thumb{
     width:100%;
     display:block;
-    border-radius:12px;
 }
 
 .play{
@@ -38,8 +52,14 @@ body{
     font-size:90px;
     color:white;
     cursor:pointer;
-    user-select:none;
-    text-shadow:0 0 15px rgba(0,0,0,0.8);
+    text-shadow:0 0 20px rgba(0,0,0,.8);
+}
+
+.footer{
+    padding:10px;
+    color:#aaa;
+    font-size:14px;
+    text-align:center;
 }
 
 </style>
@@ -47,12 +67,24 @@ body{
 
 <body>
 
-<div class="container">
+<div class="player">
 
-    <img id="thumb" src="">
+    <div class="header">
+        Video Landing
+    </div>
 
-    <div class="play" onclick="goVideo()">
-        ▶
+    <div class="video-box">
+
+        <img id="thumb" src="">
+
+        <div class="play" onclick="goVideo()">
+            ▶
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Click en Play para continuar
     </div>
 
 </div>
@@ -70,15 +102,16 @@ fetch("videos.json")
     const id = params.get("v") || "abc123";
 
     if(!data[id]){
-        document.body.innerHTML = "<h1 style='color:white'>Video no encontrado</h1>";
+        document.body.innerHTML =
+        "<h1 style='color:white'>Video no encontrado</h1>";
         return;
     }
 
-    const video = data[id];
+    document.getElementById("thumb").src =
+    data[id].thumbnail;
 
-    document.getElementById("thumb").src = video.thumbnail;
-
-    videoUrl = video.redirect;
+    videoUrl =
+    data[id].redirect;
 
 });
 
