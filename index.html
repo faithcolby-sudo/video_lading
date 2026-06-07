@@ -10,7 +10,7 @@
 
 body{
     margin:0;
-    background:#111;
+    background:#0f0f0f;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -19,28 +19,52 @@ body{
 }
 
 .player{
-    width:95%;
-    max-width:500px;
-    background:#1c1c1c;
-    border-radius:12px;
+    width:420px;
+    background:#181818;
+    border-radius:16px;
     overflow:hidden;
-    box-shadow:0 0 25px rgba(0,0,0,.5);
+    box-shadow:0 0 35px rgba(0,0,0,.7);
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .header{
-    background:#222;
+    background:#202020;
     color:white;
-    padding:12px;
+    padding:14px;
     text-align:center;
     font-weight:bold;
+    font-size:18px;
+    letter-spacing:1px;
 }
 
 .video-box{
     position:relative;
+    width:100%;
+    height:720px;
+    overflow:hidden;
+    background:black;
+}
+
+.top-bar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:#2c2c2c;
+    z-index:2;
+}
+
+.progress{
+    width:35%;
+    height:100%;
+    background:#ff0000;
 }
 
 #thumb{
     width:100%;
+    height:100%;
+    object-fit:cover;
     display:block;
 }
 
@@ -49,17 +73,45 @@ body{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    font-size:90px;
-    color:white;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:rgba(0,0,0,.55);
+    border:3px solid rgba(255,255,255,.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
     cursor:pointer;
-    text-shadow:0 0 20px rgba(0,0,0,.8);
+    color:white;
+    font-size:42px;
+    backdrop-filter:blur(4px);
+}
+
+.play:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+}
+
+.video-label{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    background:rgba(0,0,0,.65);
+    color:white;
+    padding:6px 10px;
+    border-radius:6px;
+    font-size:13px;
 }
 
 .footer{
-    padding:10px;
-    color:#aaa;
+    padding:14px;
+    color:#bfbfbf;
     font-size:14px;
     text-align:center;
+    background:#1b1b1b;
+}
+
+.footer strong{
+    color:white;
 }
 
 </style>
@@ -70,10 +122,14 @@ body{
 <div class="player">
 
     <div class="header">
-        Video Landing
+        IMOVI
     </div>
 
     <div class="video-box">
+
+        <div class="top-bar">
+            <div class="progress"></div>
+        </div>
 
         <img id="thumb" src="">
 
@@ -81,10 +137,14 @@ body{
             ▶
         </div>
 
+        <div class="video-label">
+            ▶ Video disponible
+        </div>
+
     </div>
 
     <div class="footer">
-        Click en Play para continuar
+        <strong>Presiona Play para continuar</strong>
     </div>
 
 </div>
