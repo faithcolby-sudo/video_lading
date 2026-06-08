@@ -20,5 +20,9 @@
   "r1": {
     "thumbnail": "thumbs/r1.jpeg",
     "redirect": "https://monetag.com"
+  },
+   "todos": {
+    "thumbnail": "thumbs/todos.jpeg",
+    "redirect": "https://privadoplay.online/watch.html?v=todos"
   }
 }
